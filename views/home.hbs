@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<!--headerTemplate-->
+  {{> header}}
+  <!--link a css-->
+  <body onload="startTime()">
+    <!--barra de navegacion-->
+    {{> navbar}}
+
+    <div class="container">
+      <!--Tiempo en vivo-->
+      <h1 style="text-align: center; margin-top:60px;"><div id="txt"></div></h1>
+      <h2>Hoy</h2>
+      <div class="row">
+        <!--Empresa-->
+        <h3 class="col">Soluciones</h3></div>
+
+        <div class="col">
+      <!--Dropdown/ filter-->
+        {{> filterDepartamentos}}
+    </div>
+    <!--Tabla-->
+    <div class="table-responsive">
+    <table class="table">
+  <thead class="thead-light">
+    <!--table labels-->
+  {{> tableHeader_tarea}}
+  </thead>
+  <tbody >
+    <!--table rows-->
+    {{> row_tarea}}
+    {{> row_tarea}}
+    {{> row_tarea}}
+    {{> row_tarea}}
+  </table>
+  </div>
+    <!--
+    -->
+    <hr>
+    <div class="row">
+      <!--Empresa-->
+      <h3 class="col">Saiga</h3></div>
+    <div class="col">
+        <!--Dropdown/ filter-->
+      {{> filterDepartamentos}}
+  </div>
+  <!--Tabla-->
+  <div class="table-responsive">
+    <table class="table">
+          {{> tableHeader_tarea}}
+      <tbody >
+        {{> row_tarea}}
+        {{> row_tarea}}
+        {{> row_tarea}}
+        {{> row_tarea}}
+    </table>
+  </div>
+  <!--
+    -->
+<!--Edit Button-->
+    {{> editbutton_tarea}}
+<!--Trash Button-->
+    {{> trashbutton_tarea}}
+<!--Done Button-->
+    {{> donebutton_tarea}}
+    <div class="fixed-bottom text-right">
+      <i class="fas fa-plus-circle fa-4x" style="color: #28a745;"></i>
+  </div>
+  </tbody>
+</table>
+</div>
+
+  {{> footer}}
+  </body>
+</html>

@@ -1,0 +1,32 @@
+#imgme{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    width:auto;
+    height:50px;
+    border-radius:50%;
+}
+
+.cent{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.labels{
+  font-weight: bold;
+}
+
+.btn-group-sm{
+  text-align: right;
+}
+
+
+.space{
+  margin-right: 10px;
+}
+.alert{
+  margin: 2px;
+}

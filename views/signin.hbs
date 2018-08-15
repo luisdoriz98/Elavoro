@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  {{> header}}
+  <body >
+    <div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(signinbackground.jpeg);">
+					<span class="login100-form-title-1">
+            <img src="logo.png" style="width: auto; height: 200px;">
+					</span>
+				</div>
+
+				<form class="login100-form validate-form">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Usuario</span>
+						<input class="input100" type="text" name="username" placeholder="Ejemplo: ejemplo@elavoro.co">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
+						<span class="label-input100">Contrasena</span>
+						<input class="input100" type="password" name="pass" placeholder="Ingresa Contrasena">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="flex-sb-m w-full p-b-30">
+						<div>
+							<a href="#" class="txt1">
+								Olvidaste tu contrasena?
+							</a>
+						</div>
+					</div>
+          <div class="row">
+					<div class="col container-login100-form-btn">
+            <a href="/home">
+						<button type="button" class="login100-form-btn" style="margin-right:10px;  margin-top:10px;">
+							Iniciar Sesion
+						</button>
+          </a>
+					</div>
+          <div class=" colcontainer-login100-form-btn">
+            <a href="/home">
+              <button class="login100-form-btn" style="margin-left:15px; margin-top:10px;">
+                Crear Cuenta
+              </button>
+          </a>
+					</div>
+        </div>
+
+				</form>
+			</div>
+    </div>
+  </div>
+    {{> footer}}
+  </body>
+</html>
