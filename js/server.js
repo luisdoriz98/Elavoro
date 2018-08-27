@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 //departamentos
 //Agregar Departamento
-app.post('api/departamentos', (req, res) => {
+app.post('/api/departamentos', (req, res) => {
   var departamento = new Departamento({
     nombre: req.body.nombre
   });
@@ -29,7 +29,7 @@ app.post('api/departamentos', (req, res) => {
 });
 
 //Todos los departamentos
-app.get('api/departamentos', (req, res) => {
+app.get('/api/departamentos', (req, res) => {
   Departamento.find().then((departamentos) => {
     res.send({departamentos});
   }, (e) => {
@@ -38,7 +38,7 @@ app.get('api/departamentos', (req, res) => {
 });
 
 //Departamento por id
-app.get('api/departamentos/:id', (req, res) => {
+app.get('/api/departamentos/:id', (req, res) => {
   var id = req.params.id;
     if (!ObjectID.isValid(id)){
       return res.status(404).send();
@@ -53,7 +53,7 @@ app.get('api/departamentos/:id', (req, res) => {
 });
 
 //Borrar Departamento por id
-app.delete('api/departamentos/:id', (req, res) => {
+app.delete('/api/departamentos/:id', (req, res) => {
   var id = req.params.id;
     if (!ObjectID.isValid(id)){
       return res.status(404).send();
@@ -68,7 +68,7 @@ app.delete('api/departamentos/:id', (req, res) => {
 });
 
 //Actualizar departamento
-app.patch('api/departamentos/:id', (req, res) => {
+app.patch('/api/departamentos/:id', (req, res) => {
   var id = req.params.id;
   var body = _.pick(req.body, ['nombre']);
 
@@ -96,7 +96,7 @@ app.patch('api/departamentos/:id', (req, res) => {
 //Usuarios
 //Agregar Usuario
 
-app.post('api/usuarios', (req, res) => {
+app.post('/api/usuarios', (req, res) => {
   var usuario = new Usuario({
     nombre: req.body.nombre,
     puesto: req.body.puesto,
@@ -113,7 +113,7 @@ app.post('api/usuarios', (req, res) => {
 });
 
 //Todos los usuarios
-app.get('api/usuarios', (req, res) => {
+app.get('/api/usuarios', (req, res) => {
   Usuario.find().then((usuarios) => {
     res.send({usuarios});
   }, (e) => {
@@ -122,7 +122,7 @@ app.get('api/usuarios', (req, res) => {
 });
 
 //Usuario por id
-app.get('api/usuarios/:id', (req, res) => {
+app.get('/api/usuarios/:id', (req, res) => {
   var id = req.params.id;
     if (!ObjectID.isValid(id)){
       return res.status(404).send();
@@ -137,7 +137,7 @@ app.get('api/usuarios/:id', (req, res) => {
 });
 
 //Borrar Usuario por id
-app.delete('api/usuarios/:id', (req, res) => {
+app.delete('/api/usuarios/:id', (req, res) => {
   var id = req.params.id;
     if (!ObjectID.isValid(id)){
       return res.status(404).send();
@@ -152,7 +152,7 @@ app.delete('api/usuarios/:id', (req, res) => {
 });
 
 //Actualizar usuario
-app.patch('api/usuarios/:id', (req, res) => {
+app.patch('/api/usuarios/:id', (req, res) => {
   var id = req.params.id;
   var body = _.pick(req.body, ['nombre', 'puesto', 'telefono', 'email']);
 
@@ -179,7 +179,7 @@ app.patch('api/usuarios/:id', (req, res) => {
 
 //Tareas
 //Agregar Tarea
-app.post('api/tareas', (req, res) => {
+app.post('/api/tareas', (req, res) => {
   var tarea = new Tarea({
     nombre: req.body.nombre,
     descripcion: req.body.descripcion,
@@ -198,7 +198,7 @@ app.post('api/tareas', (req, res) => {
 });
 
 //Todos los tareas
-app.get('/tareas', (req, res) => {
+app.get('/api/tareas', (req, res) => {
   Tarea.find().then((tareas) => {
     res.send({tareas});
   }, (e) => {
@@ -207,7 +207,7 @@ app.get('/tareas', (req, res) => {
 });
 
 //Tarea por id
-app.get('api/tareas/:id', (req, res) => {
+app.get('/api/tareas/:id', (req, res) => {
   var id = req.params.id;
     if (!ObjectID.isValid(id)){
       return res.status(404).send();
@@ -237,7 +237,7 @@ app.delete('/tareas/:id', (req, res) => {
 });
 
 //Actualizar tarea
-app.patch('api/tareas/:id', (req, res) => {
+app.patch('/api/tareas/:id', (req, res) => {
   var id = req.params.id;
   var body = _.pick(req.body, ['nombre', 'descripcion', 'departamento_id', 'usaurio_id', 'status', 'tiempoInicio', 'tiempoFin']);
 
