@@ -26,9 +26,7 @@ var Tarea = mongoose.model('Tarea', {
   },
   status: {
     type: String,
-    required: true,
-    minlength: 6,
-    trim: true
+    default: "sin confirmar"
   },
   tiempoInicio: {
     type: String,

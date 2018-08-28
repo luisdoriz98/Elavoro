@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 <!--headerTemplate-->
-  {{> header}}
+  {{> general/header}}
   <!--link a css-->
   <body onload="startTime()">
     <!--barra de navegacion-->
-    {{> navbar}}
+    {{> general/navbar}}
 
     <div class="container">
       <!--Tiempo en vivo-->
@@ -16,15 +16,15 @@
     <table class="table">
   <thead class="thead-light">
     <!--table labels-->
-  {{> tableHeader_produccion}}
+  {{> produccion/tableHeader}}
   </thead>
   <tbody>
     <!--table rows-->
-    {{> row_produccion}}
-    {{> row_produccion}}
-    {{> row_produccion}}
-    {{> row_produccion}}
-    {{> row_produccionUltimo}}
+    {{> produccion/row}}
+    {{> produccion/row}}
+    {{> produccion/row}}
+    {{> produccion/row}}
+    {{> produccion/row_ultimo}}
   </div>
   </tbody>
 </table>
@@ -33,12 +33,12 @@
 <!--
 -->
 <!--Edit Button-->
-{{> editbutton_produccion}}
+{{> produccion/editbutton}}
 <div class="fixed-bottom text-right">
   <i class="fas fa-plus-circle fa-4x" style="color: #28a745;"></i>
 </div>
 </div>
 
-  {{> footer}}
+  {{> general/footer}}
   </body>
 </html>
