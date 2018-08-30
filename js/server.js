@@ -1,4 +1,5 @@
 //require('./config/config');
+var request = require('request');
 const _ = require('lodash');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -13,6 +14,7 @@ var {Usuario} = require('./models/usuarios');
 var {Tarea} = require('./models/tareas');
 var app = express();
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //departamentos
 //Agregar Departamento
@@ -180,22 +182,15 @@ app.patch('/api/usuarios/:id', (req, res) => {
 //Tareas
 //Agregar Tarea
 app.post('/api/tareas', (req, res) => {
-  var tarea = new Tarea({
-    nombre: req.body.nombre,
-    descripcion: req.body.descripcion,
-    departamento_id: req.body.departamento_id,
-    usaurio_id: req.body.usaurio_id,
-    status: req.body.status,
-    tiempoInicio: req.body.tiempoInicio,
-    tiempoFin: req.body.tiempoFin
-  });
-
+  var tarea = new Tarea(req.body);
+  console.log(req.body);
   tarea.save().then((doc) => {
     res.send(doc);
   }, (e) => {
     res.status(400).send(e);
   });
 });
+
 
 //Todos los tareas
 app.get('/api/tareas', (req, res) => {
@@ -222,7 +217,7 @@ app.get('/api/tareas/:id', (req, res) => {
 });
 
 //Borrar Tarea por id
-app.delete('/tareas/:id', (req, res) => {
+app.delete('/api/tareas/:id', (req, res) => {
   var id = req.params.id;
     if (!ObjectID.isValid(id)){
       return res.status(404).send();
@@ -286,6 +281,8 @@ app.get('/home', (req, res) => {
 
 });
 
+
+
 app.get('/produccion', (req, res) => {
 res.render('produccion.hbs', {
   css: 'home',
@@ -309,10 +306,5 @@ app.get('/ajustes', (req, res) => {
     activeu: 'active'
   });
 });
-
-
-
-
-
 
 app.listen(port);

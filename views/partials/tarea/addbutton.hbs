@@ -8,11 +8,11 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-          <form action="addbutton.php" method="POST">
+      <form method="post" action="/api/tareas">
+        <div class="modal-body">
               <div class="form-group">
                   <label for="exampleFormControlInput1"><h5>Nombre de la Tarea</h5></label>
-                  <input type="text" class="form-control" id="nombreTarea" name="nombre" placeholder="Tarea 1: Recoger molde">
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tarea 1: Recoger molde">
               </div>
               <div class="form-group">
           <label for="exampleFormControlTextarea1">Descripcion</label>
@@ -41,13 +41,10 @@
                     </div>
                 </div>
               </div>
-
-
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="submit" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" >Guardar</button>
       </div>
       </form>
     </div>

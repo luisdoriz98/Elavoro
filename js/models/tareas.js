@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var Tarea = mongoose.model('Tarea', {
+var TareaSchema = new mongoose.Schema({
   nombre: {
     type: String,
     required: true,
@@ -12,15 +12,15 @@ var Tarea = mongoose.model('Tarea', {
     minlength: 6,
     trim: true
   },
-  departamento_id: {
+  departamento: {
     type: String,
-    required: true,
+    required: false,
     minlength: 6,
     trim: true
   },
-  usaurio_id: {
+  usaurio: {
     type: String,
-    required: true,
+    required: false,
     minlength: 6,
     trim: true
   },
@@ -42,5 +42,7 @@ var Tarea = mongoose.model('Tarea', {
   }
 
 });
+
+var Tarea = mongoose.model('Tarea', TareaSchema);
 
 module.exports = {Tarea};
