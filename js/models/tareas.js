@@ -4,24 +4,24 @@ var TareaSchema = new mongoose.Schema({
   nombre: {
     type: String,
     required: true,
-    minlength: 6,
+    minlength: 1,
     trim: true
   },
   descripcion: {
     type: String,
-    minlength: 6,
+    minlength: 1,
     trim: true
   },
   departamento: {
     type: String,
     required: false,
-    minlength: 6,
+    minlength: 1,
     trim: true
   },
-  usaurio: {
+  usuario: {
     type: String,
     required: false,
-    minlength: 6,
+    minlength: 1,
     trim: true
   },
   status: {

@@ -191,6 +191,16 @@ app.post('/api/tareas', (req, res) => {
   });
 });
 
+app.post('/api/addTareas', (req, res) => {
+  var tarea = new Tarea(req.body);
+  console.log(req.body);
+  tarea.save().then((doc) => {
+    res.send();
+  }, (e) => {
+    res.status(400).send(e);
+  });
+});
+
 
 //Todos los tareas
 app.get('/api/tareas', (req, res) => {
