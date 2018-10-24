@@ -14,19 +14,19 @@ var TareaSchema = new mongoose.Schema({
   },
   departamento: {
     type: String,
-    required: false,
+    required: true,
     minlength: 1,
     trim: true
   },
   usuario: {
     type: String,
-    required: false,
+    required: true,
     minlength: 1,
     trim: true
   },
   status: {
     type: String,
-    default: "sin confirmar"
+    default: "Sin Confirmar"
   },
   tiempoInicio: {
     type: String,
