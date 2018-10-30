@@ -255,7 +255,7 @@ app.delete('/api/tareas/:id', (req, res) => {
 });
 
 //Actualizar tarea
-app.patch('/api/tareas/:id', (req, res) => {
+app.put('/api/tareas/:id', (req, res) => {
   var id = req.params.id;
   var body = _.pick(req.body, ['nombre', 'descripcion', 'departamento_id', 'usaurio_id', 'status', 'tiempoInicio', 'tiempoFin']);
 
