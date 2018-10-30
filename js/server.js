@@ -167,7 +167,7 @@ app.delete('/api/usuarios/:id', (req, res) => {
 });
 
 //Actualizar usuario
-app.patch('/api/usuarios/:id', (req, res) => {
+app.put('/api/usuarios/:id', (req, res) => {
   var id = req.params.id;
   var body = _.pick(req.body, ['nombre', 'puesto', 'telefono', 'email']);
 
