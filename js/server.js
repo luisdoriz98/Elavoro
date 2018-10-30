@@ -13,6 +13,18 @@ var {Departamento} = require('./models/departamentos');
 var {Usuario} = require('./models/usuarios');
 var {Tarea} = require('./models/tareas');
 var app = express();
+const allowCrossDomain = (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH');
+  res.header('Access-Control-Allow-Headers', 'token, Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With, x-chat-id');
+  if (req.method === 'OPTIONS') {
+    res.send(204);
+  } else {
+    next();
+  }
+};
+
+app.use(allowCrossDomain);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
