@@ -82,7 +82,7 @@ app.delete('/api/departamentos/:id', (req, res) => {
 });
 
 //Actualizar departamento
-app.patch('/api/departamentos/:id', (req, res) => {
+app.put('/api/departamentos/:id', (req, res) => {
   console.log(req.body);
   var id = req.params.id;
   var body = _.pick(req.body, ['nombre']);
