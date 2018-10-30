@@ -256,8 +256,9 @@ app.delete('/api/tareas/:id', (req, res) => {
 
 //Actualizar tarea
 app.put('/api/tareas/:id', (req, res) => {
+  console.log(req);
   var id = req.params.id;
-  var body = _.pick(req.body, ['nombre', 'descripcion', 'departamento_id', 'usaurio_id', 'status', 'tiempoInicio', 'tiempoFin']);
+  var body = _.pick(req.body, ['nombre', 'descripcion', 'departamento', 'usaurio', 'status', 'tiempoInicio', 'tiempoFin']);
 
   if (!ObjectID.isValid(id)){
     return res.status(404).send();

@@ -17,7 +17,7 @@ MongoClient.connect('mongodb://localhost:27017/ElavoroApp', (err, client) => {
   //   console.log(JSON.stringify(result.ops, undefined, 2));
   // });
 
-  db.collection('Usuarios').insertOne({
+  db.collection('Tareas').insertOne({
     nombre: 'Marcelo',
     puesto: 'Administracion',
     telefono: '8111069631',
